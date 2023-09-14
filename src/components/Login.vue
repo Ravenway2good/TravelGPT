@@ -6,7 +6,7 @@
              label-position='left'
              label-width='120px'>
       <div class='login-header'>
-        Travel GPT
+        TourismGPT
       </div>
       <el-form-item prop='loginId' label='User Number'>
         <el-input v-model.trim='loginForm.loginId'
@@ -69,10 +69,13 @@ export default {
     handleLogin () {
       this.$refs.loginForm.validate(async valid => {
         if (valid) {
-          const result = await formLogin({...this.loginForm});
-          if (!_.isEmpty(result) && result.status !== 200) {
-            throw new Error(result.message);
-          }
+          // const result = await formLogin({...this.loginForm});
+          // if (!_.isEmpty(result) && result.status !== 200) {
+          //   throw new Error(result.message);
+          // }
+          await this.$router.push({
+            name: 'NotificationPage',
+          });
         }
       });
     },
