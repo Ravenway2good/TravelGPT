@@ -3,11 +3,11 @@
     <h2>Welcome to TourismGPT</h2>
     <div class='guide-button'>
       <div class='guide-button-item'>
-        <div class="grid-content guide-chat">Chat</div>
+        <div class="grid-content guide-chat" @click='redirectToChat'>Chat</div>
         <div class="grid-content guide-table">Frequent Questions</div>
       </div>
       <div class='guide-button-item'>
-        <div class="grid-content guide-chart">Data Analysis</div>
+        <div class="grid-content guide-chart" @click='redirectToAnalysis'>Data Analysis</div>
         <div class="grid-content guide-future">Coming soon...</div>
       </div>
     </div>
@@ -16,7 +16,19 @@
 
 <script>
 export default {
-  name: 'GuidePage'
+  name: 'GuidePage',
+  methods: {
+    redirectToChat() {
+      // this.$router.push({
+      //   name: 'DataAnalysisPage',
+      // });
+    },
+    redirectToAnalysis() {
+      this.$router.push({
+        name: 'DataAnalysisPage',
+      });
+    },
+  },
 }
 </script>
 

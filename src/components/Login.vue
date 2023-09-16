@@ -26,7 +26,6 @@
 </template>
 <script>
 import _ from 'lodash';
-import {formLogin} from "../repositories/user";
 
 export default {
   name: 'Login',
@@ -74,7 +73,7 @@ export default {
           //   throw new Error(result.message);
           // }
           await this.$router.push({
-            name: 'NotificationPage',
+            name: 'GuidePage',
           });
         }
       });
